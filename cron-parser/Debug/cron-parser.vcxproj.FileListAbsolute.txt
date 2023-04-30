@@ -1,0 +1,2 @@
+C:\Company Assessments\cron-parser\Debug\cron-parser.exe
+C:\Company Assessments\cron-string-parser\cron-parser\Debug\cron-parser.exe

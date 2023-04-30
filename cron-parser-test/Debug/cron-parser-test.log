@@ -1,0 +1,7 @@
+﻿  cron-parser-test.cpp
+C:\Company Assessments\cron-parser\utils.h(9,20): warning C4018: '<': signed/unsigned mismatch
+C:\Company Assessments\cron-parser\CronStringParser.h(71,23): warning C4018: '<': signed/unsigned mismatch
+C:\Company Assessments\cron-parser\CronStringParser.h(158,21): warning C4018: '<': signed/unsigned mismatch
+C:\Company Assessments\cron-parser\CronStringParser.h(185,21): warning C4018: '<': signed/unsigned mismatch
+     Creating library C:\Company Assessments\cron-parser-test\Debug\cron-parser-test.lib and object C:\Company Assessments\cron-parser-test\Debug\cron-parser-test.exp
+  cron-parser-test.vcxproj -> C:\Company Assessments\cron-parser-test\Debug\cron-parser-test.dll
