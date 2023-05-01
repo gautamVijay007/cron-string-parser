@@ -14,18 +14,18 @@ namespace cronparsertest
 		/*
 		intVectorToString util method test
 		*/
-		TEST_METHOD(intVectorToString)
+		TEST_METHOD(intVectorToString_test)
 		{
 			vector<int> test = { 1,2,3,4 };
 			string exp = "1 2 3 4";
-			string x = intVectorToStringDup(test);
+			string x = intVectorToString(test);
 			Assert::AreEqual(exp, x);
 		}
 
 		// Parse string all fields valid
 		TEST_METHOD(parseString_Valid)
 		{
-			auto data = cronStringParser.parseString("*/20 * 1,15,31 3 4-6 /usr/bin/find");
+			auto data = cronStringParser.parseString("*/20 * 1,15,31 2/8 4-6 /usr/bin/find");
 			int actualSize = data.size();
 			Assert::AreEqual(6, actualSize);
 
@@ -51,7 +51,7 @@ namespace cronparsertest
 			Assert::AreEqual(expectedMHourData, actualHourData);
 
 			string actualMonthData = data[month];
-			string expectedMonthData = "3";
+			string expectedMonthData = "2 10";
 			Assert::AreEqual(expectedMonthData, actualMonthData);
 
 			string actualDOWData = data[dayOfWeek];
@@ -66,11 +66,17 @@ namespace cronparsertest
 		// Invalid Input on Parse field
 		TEST_METHOD(ParseString_InvalidInput)
 		{
+			// base invalid case
 			auto func1 = [this] { cronStringParser.parseString("InvalidInput"); };
 			Assert::ExpectException<exception>(func1);
 
+			// Day of week parameter is missing
 			auto func2 = [this] { cronStringParser.parseString("*/20 * 1,15,32 3 /usr/bin/find"); };
 			Assert::ExpectException<exception>(func2);
+
+			// Incorrect Input at minute as format is wrong
+			auto func3 = [this] { cronStringParser.parseString("/20* * 1,15,30 3 4-5 /usr/bin/find"); };
+			Assert::ExpectException<exception>(func3);
 		}
 
 		// Cron data out of range per field

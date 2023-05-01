@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Company Assessments\cron-parser-test\Debug\cron-parser-test.dll</FullPath>
+      <FullPath>C:\Company Assessments\cron-string-parser\cron-parser\Debug\cron-parser-test.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
